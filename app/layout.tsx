@@ -47,7 +47,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <DataProvider>
           <Background />
           <Navbar />
-          {children}
+          <div className="absolute top-0 size-full pt-[136px]">
+            <div className="mx-auto flex size-full max-w-[1440px] items-center justify-center overflow-hidden">
+              {children}{' '}
+            </div>
+          </div>
         </DataProvider>
       </body>
     </html>

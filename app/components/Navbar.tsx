@@ -17,7 +17,7 @@ const items = {
 export default function Navbar() {
   const path = usePathname() as Routes;
   return (
-    <div className="mx-auto flex h-[96px] w-full max-w-[1440px] items-center justify-between pl-[64px]">
+    <div className="relative z-10 mx-auto flex h-[96px] w-full max-w-[1440px] items-center justify-between pl-[64px]">
       <Image priority width={48} height={48} className="size-[48px]" alt="logo" src={logo as string} />
       <div className="size-full max-w-[736px] bg-white/5 backdrop-blur-xl">
         <ul className="flex size-full items-center justify-between pl-[159px] pr-[64px]">
