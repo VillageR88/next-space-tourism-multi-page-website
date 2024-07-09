@@ -50,3 +50,7 @@ export default function Home({ params }: { params: { celestial: string } }) {
     </>
   );
 }
+
+export function generateStaticParams() {
+  return Object.entries(RoutesCelestial).map((item) => ({ celestial: item[0] }));
+}
