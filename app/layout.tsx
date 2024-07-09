@@ -4,6 +4,7 @@ import { Bellefair, Barlow, Barlow_Condensed } from 'next/font/google';
 import Navbar from '@/app/components/Navbar';
 import { redirect } from 'next/navigation';
 import type { Routes, RoutesCelestial } from '@/app/routes';
+import Background from '@/app/components/Background';
 
 const bellefair = Bellefair({
   display: 'swap',
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`${bellefair.variable} ${barlow.variable} ${barlowCondensed.variable} relative min-h-dvh flex-col overflow-x-clip bg-veryDarkNavy py-6 sm:py-10 md:min-h-screen`}
       >
+        <Background path={path as Routes | RoutesCelestial} />
         {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
         <form action={handleSubmit}>
           <Navbar path={path as Routes | RoutesCelestial} />
