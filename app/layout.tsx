@@ -36,7 +36,6 @@ let path: string;
 // eslint-disable-next-line @typescript-eslint/require-await
 async function handleSubmit(FormData: FormData) {
   'use server';
-  console.log(FormData.get('path'));
   path = FormData.get('path') as Routes;
   redirect(path);
 }

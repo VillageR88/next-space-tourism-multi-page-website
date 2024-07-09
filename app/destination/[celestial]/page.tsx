@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { RoutesCelestial } from '../../routes';
 import Background from './Background';
 import Image from 'next/image';
@@ -9,7 +8,8 @@ const pageTitle = {
   title: 'PICK YOUR DESTINATION',
 };
 
-export default function Home() {
+export default function Home({ params }: { params: { celestial: string } }) {
+  const option = params.celestial;
   return (
     <>
       <Background />
@@ -26,14 +26,20 @@ export default function Home() {
           </div>
           <div className="flex size-full max-w-[539px] items-center justify-center">
             <div className="flex size-full max-h-[468px] max-w-[445px] flex-col">
-              <ul className="flex gap-[32px]">
+              <ul className="flex h-[32px] gap-[32px]">
                 {Object.entries(RoutesCelestial).map((item) => (
-                  <li key={item[0]}>
-                    <Link prefetch href={item[1]}>
-                      <button type="button" className="text-white">
-                        {item[0].toUpperCase()}
-                      </button>
-                    </Link>
+                  <li className="group/li flex flex-col justify-between" key={item[0]}>
+                    <button
+                      name="path"
+                      value={item[1] as RoutesCelestial}
+                      type="submit"
+                      className={`font-barlowCondensed text-[16px] tracking-wider transition ${option === item[0] ? 'text-white' : 'text-lightBlue hover:text-white'}`}
+                    >
+                      {item[0].toUpperCase()}
+                    </button>
+                    <div
+                      className={`h-[3px] w-full transition ${option === item[0] ? 'bg-white' : 'group-has-[button:hover]/li:bg-white/50'}`}
+                    />
                   </li>
                 ))}
               </ul>
