@@ -1,22 +1,23 @@
 'use client';
 
-import { Dispatch, ReactNode, SetStateAction, createContext, useState } from 'react';
+import { type Dispatch, type ReactNode, type SetStateAction, createContext, useState } from 'react';
+import { Routes } from '@/app/routes';
 
 export const DataContext = createContext(
   {} as {
-    placeholder: boolean;
-    setPlaceholder: Dispatch<SetStateAction<boolean>>;
+    path: Routes;
+    setPath: Dispatch<SetStateAction<Routes>>;
   },
 );
 
 export default function DataProvider({ children }: { children: ReactNode }) {
-  const [placeholder, setPlaceholder] = useState<boolean>(false);
+  const [path, setPath] = useState<Routes>(Routes.home);
 
   return (
     <DataContext.Provider
       value={{
-        placeholder,
-        setPlaceholder,
+        path,
+        setPath,
       }}
     >
       {children}

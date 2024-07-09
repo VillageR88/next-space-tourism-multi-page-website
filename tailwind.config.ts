@@ -22,6 +22,7 @@ const config: Config = {
       },
       colors: {
         veryDarkNavy: '#0B0D17',
+        lightBlue: '#D0D6F9',
       },
     },
   },
