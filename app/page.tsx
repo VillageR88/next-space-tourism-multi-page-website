@@ -1,3 +1,5 @@
+import { redirect } from 'next/navigation';
+import { Routes } from './routes';
 export default function Home() {
-  <div></div>;
+  redirect(Routes.home);
 }

@@ -1,6 +1,6 @@
 export enum Routes {
-  home = '/',
-  destination = '/destination',
-  crew = '/crew',
-  technology = '/technology',
+  home = '/home/',
+  destination = '/destination/',
+  crew = '/crew/',
+  technology = '/technology/',
 }
