@@ -49,8 +49,8 @@ const celestialItems = {
   },
 };
 
-export default function Home({ params }: { params: { celestial: string } }) {
-  const option = params.celestial;
+export default function Destination({ params }: { params: { celestial: string } }) {
+  const option = params.celestial as keyof typeof celestialItems;
   return (
     <div className="flex size-full max-h-[792px] max-w-[1110px] flex-col gap-[24px]">
       <div className="flex h-[34px] items-center gap-[24px]">
@@ -61,13 +61,7 @@ export default function Home({ params }: { params: { celestial: string } }) {
       </div>
       <div className="flex size-full max-h-[734px] justify-between">
         <div className="flex size-full max-w-[539px] items-center justify-center">
-          <Image
-            width={480}
-            height={480}
-            className="size-[480px]"
-            src={celestialItems[option as keyof typeof celestialItems].src}
-            alt={option}
-          />
+          <Image width={480} height={480} className="size-[480px]" src={celestialItems[option].src} alt={option} />
         </div>
         <div className="flex size-full max-w-[539px] items-center justify-center">
           <div className="flex size-full max-h-[468px] max-w-[445px] flex-col justify-between gap-[40px]">
@@ -91,12 +85,12 @@ export default function Home({ params }: { params: { celestial: string } }) {
             <div className="size-full max-h-[254px] flex-col justify-between">
               <h1 className="font-bellefair text-[96px] text-white">{option.toUpperCase()}</h1>
               <p className="font-barlow text-[18px] leading-[180%] text-lightBlue">
-                {celestialItems[option as keyof typeof celestialItems].description}
+                {celestialItems[option].description}
               </p>
             </div>
             <div className="h-px border-b border-white/25" />
             <ul className="flex size-full max-h-[61px]">
-              {Object.entries(celestialItems[option as keyof typeof celestialItems].calculations).map((item) => (
+              {Object.entries(celestialItems[option].calculations).map((item) => (
                 <li key={item[0]} className="flex size-full max-w-[210px] flex-col gap-[12px]">
                   <span className="font-barlowCondensed text-[14px] leading-tight tracking-[2px] text-lightBlue">
                     {item[0].toUpperCase()}

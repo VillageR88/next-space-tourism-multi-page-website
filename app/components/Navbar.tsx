@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import logo from '@/public/assets/shared/logo.svg';
-import { Routes, RoutesCelestial } from '../routes';
+import { Routes, RoutesCelestial, RoutesCrew } from '../routes';
 
 const items = {
   home: 'HOME',
@@ -9,7 +9,7 @@ const items = {
   technology: 'TECHNOLOGY',
 };
 
-export default function Navbar({ path }: { path: Routes | RoutesCelestial }) {
+export default function Navbar({ path }: { path: Routes | RoutesCelestial | RoutesCrew }) {
   return (
     <div
       // eslint-disable-next-line @typescript-eslint/no-misused-promises
@@ -18,7 +18,7 @@ export default function Navbar({ path }: { path: Routes | RoutesCelestial }) {
       <Image priority width={48} height={48} className="size-[48px]" alt="logo" src={logo as string} />
       <div className="size-full max-w-[736px] bg-white/5 backdrop-blur-xl">
         <ul className="flex size-full items-center justify-between pl-[159px] pr-[64px]">
-          {Object.entries(Routes as typeof Routes | typeof RoutesCelestial).map((item, index) => (
+          {Object.entries(Routes as typeof Routes | typeof RoutesCelestial | typeof RoutesCrew).map((item, index) => (
             <li className="group/li flex h-full flex-col justify-between pt-[38px] font-barlowCondensed" key={item[0]}>
               <button
                 name="path"
@@ -31,7 +31,7 @@ export default function Navbar({ path }: { path: Routes | RoutesCelestial }) {
               </button>
               {/* </Link> */}
               <div
-                className={`group h-[3px] w-full transition ${path === item[1] || (Object.values(RoutesCelestial).includes(item[1] as RoutesCelestial) && Object.values(RoutesCelestial).includes(path as RoutesCelestial)) ? 'bg-white' : 'group-has-[button:hover]/li:bg-white/50'}`}
+                className={`group h-[3px] w-full transition ${path === item[1] || (Object.values(RoutesCelestial).includes(item[1] as RoutesCelestial) && Object.values(RoutesCelestial).includes(path as RoutesCelestial)) || (Object.values(RoutesCrew).includes(item[1] as RoutesCrew) && Object.values(RoutesCrew).includes(path as RoutesCrew)) ? 'bg-white' : 'group-has-[button:hover]/li:bg-white/50'}`}
               />
             </li>
           ))}

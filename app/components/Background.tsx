@@ -12,7 +12,10 @@ export default function Background({ path }: { path: Routes | RoutesCelestial })
     '/destination/mars/': BackgroundDestination,
     '/destination/europa/': BackgroundDestination,
     '/destination/titan/': BackgroundDestination,
-    '/crew/': BackgroundCrew,
+    '/crew/hurley/': BackgroundCrew,
+    '/crew/shuttleworth/': BackgroundCrew,
+    '/crew/glover/': BackgroundCrew,
+    '/crew/ansari/': BackgroundCrew,
     '/technology/': BackgroundTechnology,
   } as const;
   return <Image className="absolute top-0 -z-10 size-full object-cover" alt="" src={background[path]} />;
