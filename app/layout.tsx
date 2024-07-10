@@ -1,8 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Bellefair, Barlow, Barlow_Condensed } from 'next/font/google';
-import { redirect } from 'next/navigation';
-import type { Routes } from '@/app/routes';
 
 const bellefair = Bellefair({
   display: 'swap',
@@ -31,14 +29,6 @@ export const metadata: Metadata = {
   applicationName: 'Space tourism multi-page website',
 } as const;
 
-let path: string;
-// eslint-disable-next-line @typescript-eslint/require-await
-async function handleSubmit(FormData: FormData) {
-  'use server';
-  path = FormData.get('path') as Routes;
-  redirect(path);
-}
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -51,8 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`${bellefair.variable} ${barlow.variable} ${barlowCondensed.variable} relative min-h-dvh flex-col overflow-x-clip bg-veryDarkNavy py-6 sm:py-10 md:min-h-screen`}
       >
-        {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
-        <form action={handleSubmit}>{children}</form>
+        <div>{children}</div>
       </body>
     </html>
   );

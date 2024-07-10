@@ -4,6 +4,7 @@ import imageMoon from '@/public/assets/destination/image-moon.webp';
 import imageMars from '@/public/assets/destination/image-mars.webp';
 import imageEuropa from '@/public/assets/destination/image-europa.webp';
 import imageTitan from '@/public/assets/destination/image-titan.webp';
+import Link from 'next/link';
 
 const celestialItems = {
   moon: {
@@ -56,14 +57,14 @@ export default function Destination({ params }: { params: { celestial: string } 
           <ul className="flex h-[32px] gap-[32px]">
             {Object.entries(RoutesCelestial).map((item) => (
               <li className="group/li flex flex-col justify-between" key={item[0]}>
-                <button
-                  name="path"
-                  value={item[1] as RoutesCelestial}
-                  type="submit"
-                  className={`font-barlowCondensed text-[16px] tracking-wider transition ${option === item[0] ? 'text-white' : 'text-lightBlue hover:text-white'}`}
-                >
-                  {item[0].toUpperCase()}
-                </button>
+                <Link prefetch href={item[1]}>
+                  <button
+                    type="button"
+                    className={`font-barlowCondensed text-[16px] tracking-wider transition ${option === item[0] ? 'text-white' : 'text-lightBlue hover:text-white'}`}
+                  >
+                    {item[0].toUpperCase()}
+                  </button>
+                </Link>
                 <div
                   className={`h-[3px] w-full transition ${option === item[0] ? 'bg-white' : 'group-has-[button:hover]/li:bg-white/50'}`}
                 />

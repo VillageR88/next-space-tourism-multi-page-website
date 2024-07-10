@@ -1,6 +1,7 @@
 import { Routes } from '../routes';
 import Background from './Background';
 import NestedLayout from '../components/NestedLayout';
+import Link from 'next/link';
 const titleButton = 'EXPLORE';
 const line1 = 'SO, YOU WANT TO TRAVEL TO';
 const title = 'SPACE';
@@ -20,14 +21,14 @@ export default function Home() {
             <h1 className="font-bellefair text-[144px] leading-tight text-white">{title}</h1>
             <p className="font-barlow text-[18px] leading-[180%] text-lightBlue">{description}</p>
           </div>
-          <button
-            value={Routes.destination}
-            name="path"
-            type="submit"
-            className="relative flex size-[272px] items-center justify-center rounded-full bg-white font-bellefair text-[32px] text-veryDarkNavy outline outline-[88px] outline-transparent transition-all hover:text-veryDarkNavy/50 hover:outline-white/10"
-          >
-            {titleButton}
-          </button>
+          <Link prefetch href={Routes.destination}>
+            <button
+              type="button"
+              className="relative flex size-[272px] items-center justify-center rounded-full bg-white font-bellefair text-[32px] text-veryDarkNavy outline outline-[88px] outline-transparent transition-all hover:text-veryDarkNavy/50 hover:outline-white/10"
+            >
+              {titleButton}
+            </button>
+          </Link>
         </div>
       </div>
     </NestedLayout>

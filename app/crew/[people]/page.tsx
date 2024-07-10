@@ -4,6 +4,7 @@ import imageHurley from '@/public/assets/crew/image-douglas-hurley.webp';
 import imageShuttleworth from '@/public/assets/crew/image-mark-shuttleworth.webp';
 import imageGlover from '@/public/assets/crew/image-victor-glover.webp';
 import imageAnsari from '@/public/assets/crew/image-anousheh-ansari.webp';
+import Link from 'next/link';
 
 const peopleItems = {
   hurley: {
@@ -58,13 +59,13 @@ export default function Crew({ params }: { params: { people: string } }) {
         <ul className="flex h-[63px] gap-[40px]">
           {Object.entries(RoutesCrew).map((item) => (
             <li className="group/li flex flex-col justify-between" key={item[0]}>
-              <button
-                title={peopleItems[item[0] as keyof typeof peopleItems].name}
-                name="path"
-                value={item[1] as RoutesCrew}
-                type="submit"
-                className={`size-[15px] rounded-full transition ${option === item[0] ? 'bg-white' : 'bg-white/[17.44%] hover:bg-white/50'}`}
-              />
+              <Link prefetch href={item[1]}>
+                <button
+                  title={peopleItems[item[0] as keyof typeof peopleItems].name}
+                  type="button"
+                  className={`size-[15px] rounded-full transition ${option === item[0] ? 'bg-white' : 'bg-white/[17.44%] hover:bg-white/50'}`}
+                />
+              </Link>
             </li>
           ))}
         </ul>
