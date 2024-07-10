@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import type { Routes, RoutesCelestial, RoutesCrew } from '../routes';
+import { Routes, type RoutesCelestial, type RoutesCrew } from '../routes';
 import Navbar from './Navbar';
 
 export default function NestedLayout({
@@ -9,11 +9,14 @@ export default function NestedLayout({
   children: ReactNode;
   path: Routes | RoutesCelestial | RoutesCrew;
 }) {
+  console.log(path);
   return (
     <>
       <Navbar path={path} />
       <div className="absolute top-0 size-full pt-[136px]">
-        <div className="mx-auto flex size-full max-w-[1440px] items-center justify-center overflow-x-clip">
+        <div
+          className={`mx-auto flex size-full max-w-[1440px] items-center overflow-x-clip ${path.includes(Routes.technology) ? 'justify-end' : 'justify-center'}`}
+        >
           {children}
         </div>
       </div>

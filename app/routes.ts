@@ -2,7 +2,7 @@ export enum Routes {
   home = '/home/',
   destination = '/destination/moon/',
   crew = '/crew/hurley/',
-  technology = '/technology/',
+  technology = '/technology/launch-vehicle/',
 }
 
 export enum RoutesCelestial {
@@ -17,4 +17,10 @@ export enum RoutesCrew {
   shuttleworth = '/crew/shuttleworth/',
   glover = '/crew/glover/',
   ansari = '/crew/ansari/',
+}
+
+export enum RoutesTechnology {
+  'launch-vehicle' = '/technology/launch-vehicle/',
+  spaceport = '/technology/spaceport/',
+  'space-capsule' = '/technology/space-capsule/',
 }
