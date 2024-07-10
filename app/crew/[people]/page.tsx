@@ -86,9 +86,27 @@ export default function Crew({ params }: { params: { people: string } }) {
             className={`absolute ${option === Object.keys(peopleItems)[0] ? 'h-[670px] w-[510px]' : option === Object.keys(peopleItems)[1] ? 'h-[676px] w-[470px]' : option === Object.keys(peopleItems)[2] ? 'h-[640px] w-[540px]' : 'h-[620px] w-[580px]'}`}
           >
             <Image
-              className="mask-image-linear relative -z-10 object-contain"
+              className={`mask-image-linear relative -z-10 object-contain transition ${option === Object.keys(peopleItems)[0] ? 'opacity-100' : 'opacity-0'}`}
               fill
-              src={peopleItems[option].src}
+              src={peopleItems.hurley.src}
+              alt={option}
+            />
+            <Image
+              className={`mask-image-linear relative -z-10 object-contain transition ${option === Object.keys(peopleItems)[1] ? 'opacity-100' : 'opacity-0'}`}
+              fill
+              src={peopleItems.shuttleworth.src}
+              alt={option}
+            />
+            <Image
+              className={`mask-image-linear relative -z-10 object-contain transition ${option === Object.keys(peopleItems)[2] ? 'opacity-100' : 'opacity-0'}`}
+              fill
+              src={peopleItems.glover.src}
+              alt={option}
+            />
+            <Image
+              className={`mask-image-linear relative -z-10 object-contain transition ${option === Object.keys(peopleItems)[3] ? 'opacity-100' : 'opacity-0'}`}
+              fill
+              src={peopleItems.ansari.src}
               alt={option}
             />
           </div>
