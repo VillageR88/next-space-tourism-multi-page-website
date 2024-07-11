@@ -48,7 +48,7 @@ const celestialItems = {
 export default function Destination({ params }: { params: { celestial: string } }) {
   const option = params.celestial as keyof typeof celestialItems;
   return (
-    <div className="flex size-full max-h-[688px] flex-col items-center justify-between xl:max-h-[734px] xl:flex-row">
+    <div className="flex size-full flex-col items-center justify-between xl:max-h-[734px] xl:flex-row">
       <div className="flex size-full max-w-[539px] items-center justify-center pb-[80px] pt-[40px] xl:py-0">
         <Image
           width={480}
