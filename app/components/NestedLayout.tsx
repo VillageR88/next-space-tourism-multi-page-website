@@ -15,7 +15,7 @@ export default function NestedLayout({
       <Navbar path={path} />
       <div className="absolute top-0 size-full pt-[136px]">
         <div
-          className={`mx-auto flex size-full min-h-[797px] max-w-[1440px] items-center overflow-x-clip ${path.includes(Routes.technology) ? 'justify-end' : 'justify-center'}`}
+          className={`mx-auto flex min-h-full w-full max-w-[1440px] items-center overflow-x-clip ${path.includes(Routes.technology) ? 'justify-end' : 'justify-center'}`}
         >
           {children}
         </div>

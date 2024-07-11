@@ -10,7 +10,7 @@ const pageTitle = {
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <NestedLayout path={Routes.technology}>
-      <div className="flex size-full max-h-[792px] max-w-[1275px] flex-col gap-[24px]">
+      <div className="flex size-full h-[792px] max-w-[1275px] flex-col gap-[24px]">
         <Background path={Routes.technology} />
         <div className="flex h-[34px] items-center gap-[24px]">
           <span className="font-barlowCondensed text-[28px] font-bold tracking-[4.72px] text-white/25">
