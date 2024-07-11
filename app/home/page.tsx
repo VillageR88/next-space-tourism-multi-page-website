@@ -1,5 +1,5 @@
 import { Routes } from '../routes';
-import Background from './Background';
+import Background from '@/app/components/Background';
 import NestedLayout from '../components/NestedLayout';
 import Link from 'next/link';
 const titleButton = 'EXPLORE';
@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <NestedLayout path={Routes.home}>
       <div className="flex size-full max-h-[632px] max-w-[1110px] items-end">
-        <Background />
+        <Background path={Routes.home} />
         <div className="flex size-full max-h-[343px] items-center justify-between">
           <div className="flex size-full max-w-[540px] flex-col gap-[24px]">
             <span className="font-barlowCondensed text-[28px] leading-tight tracking-[4px] text-lightBlue">
