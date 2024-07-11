@@ -48,13 +48,19 @@ const celestialItems = {
 export default function Destination({ params }: { params: { celestial: string } }) {
   const option = params.celestial as keyof typeof celestialItems;
   return (
-    <div className="flex size-full max-h-[734px] justify-between">
-      <div className="flex size-full max-w-[539px] items-center justify-center">
-        <Image width={480} height={480} className="size-[480px]" src={celestialItems[option].src} alt={option} />
+    <div className="flex size-full max-h-[688px] flex-col items-center justify-between xl:max-h-[734px] xl:flex-row">
+      <div className="flex size-full max-w-[539px] items-center justify-center pb-[80px] pt-[40px] xl:py-0">
+        <Image
+          width={480}
+          height={480}
+          className="size-[300px] xl:size-[480px]"
+          src={celestialItems[option].src}
+          alt={option}
+        />
       </div>
-      <div className="flex size-full max-w-[539px] items-center justify-center">
-        <div className="flex size-full max-h-[468px] max-w-[445px] flex-col justify-between gap-[40px]">
-          <ul className="flex h-[32px] gap-[32px]">
+      <div className="flex size-full max-w-[539px] items-center justify-center pb-[50px] xl:pb-0">
+        <div className="flex size-full max-h-[468px] max-w-[514px] flex-col justify-between gap-[24px] xl:max-w-[445px] xl:gap-[40px]">
+          <ul className="flex h-[32px] justify-center gap-[32px] xl:justify-start">
             {Object.entries(RoutesCelestial).map((item) => (
               <li className="group/li flex flex-col justify-between" key={item[0]}>
                 <Link prefetch href={item[1]}>
@@ -71,14 +77,14 @@ export default function Destination({ params }: { params: { celestial: string } 
               </li>
             ))}
           </ul>
-          <div className="size-full max-h-[254px] flex-col justify-between">
-            <h1 className="font-bellefair text-[96px] text-white">{option.toUpperCase()}</h1>
-            <p className="font-barlow text-[18px] leading-[180%] text-lightBlue">
+          <div className="size-full max-h-[254px] flex-col justify-between text-center xl:text-start">
+            <h1 className="font-bellefair text-[80px] text-white xl:text-[96px]">{option.toUpperCase()}</h1>
+            <p className="font-barlow text-[16px] leading-[180%] text-lightBlue xl:text-[18px]">
               {celestialItems[option].description}
             </p>
           </div>
           <div className="h-px border-b border-white/25" />
-          <ul className="flex size-full max-h-[61px]">
+          <ul className="flex size-full max-h-[61px] justify-center text-center xl:justify-start xl:text-start">
             {Object.entries(celestialItems[option].calculations).map((item) => (
               <li key={item[0]} className="flex size-full max-w-[210px] flex-col gap-[12px]">
                 <span className="font-barlowCondensed text-[14px] leading-tight tracking-[2px] text-lightBlue">

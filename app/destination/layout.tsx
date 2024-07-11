@@ -10,13 +10,15 @@ const pageTitle = {
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <NestedLayout path={Routes.destination}>
-      <div className="flex size-full h-[792px] max-w-[1110px] flex-col gap-[24px]">
+      <div className="flex size-full h-fit flex-col gap-[24px] px-[40px] xl:h-[792px] xl:max-w-[1110px]">
         <Background path={Routes.destination} />
         <div className="flex h-[34px] items-center gap-[24px]">
-          <span className="font-barlowCondensed text-[28px] font-bold tracking-[4.72px] text-white/25">
+          <span className="font-barlowCondensed text-[20px] font-bold text-white/25 xl:text-[28px] xl:tracking-[4.72px]">
             {pageTitle.number}
           </span>
-          <span className="font-barlowCondensed text-[28px] tracking-[4px] text-white">{pageTitle.title}</span>
+          <span className="font-barlowCondensed text-[20px] tracking-[4px] text-white xl:text-[28px]">
+            {pageTitle.title}
+          </span>
         </div>
         {children}
       </div>
