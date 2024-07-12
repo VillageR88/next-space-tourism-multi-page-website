@@ -1,13 +1,12 @@
-
 /**
- * @type {import('next').NextConfig}
+ @type {import('next').NextConfig}
  */
 const nextConfig = {
-  //output: 'export',
   images: { unoptimized: true },
   trailingSlash: true,
   //distDir: 'next-in-browser-markdown-editor',
   reactStrictMode: true,
+  output: 'export',
 };
 
 //if (process.env.NODE_ENV !== 'development') {

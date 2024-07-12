@@ -1,7 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Bellefair, Barlow, Barlow_Condensed } from 'next/font/google';
-import DataProvider from '@/app/_providers/DataContext';
 
 const bellefair = Bellefair({
   display: 'swap',
@@ -25,24 +24,24 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: 'Tic tac toe',
-  description: 'Tic tac toe',
-  applicationName: 'Tic tac toe',
+  title: 'Space tourism multi-page website',
+  description: 'Space tourism multi-page website',
+  applicationName: 'Space tourism multi-page website',
 } as const;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"></link>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"></link>
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"></link>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <meta property="og:image" content={undefined} />
       </head>
       <body
-        className={`${bellefair.variable} ${barlow.variable} ${barlowCondensed.variable} mx-auto flex min-h-dvh flex-col justify-center overflow-x-clip bg-veryDarkNavy p-6 sm:py-10 md:min-h-screen`}
+        className={`${bellefair.variable} ${barlow.variable} ${barlowCondensed.variable} relative min-h-dvh flex-col overflow-x-clip bg-veryDarkNavy md:min-h-screen xl:py-10`}
       >
-        <DataProvider>{children}</DataProvider>
+        <div>{children}</div>
       </body>
     </html>
   );

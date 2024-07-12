@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
 import { metadata } from './layout';
 
 export default function manifest(): MetadataRoute.Manifest {
