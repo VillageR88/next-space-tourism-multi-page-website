@@ -63,7 +63,7 @@ export default function Destination({ params }: { params: { celestial: string } 
           <ul className="flex h-[32px] justify-center gap-[32px] xl:justify-start">
             {Object.entries(RoutesCelestial).map((item) => (
               <li className="group/li flex flex-col justify-between" key={item[0]}>
-                <Link prefetch href={item[1]}>
+                <Link scroll={false} prefetch href={item[1]}>
                   <button
                     type="button"
                     className={`font-barlowCondensed text-[14px] tracking-wider transition md:text-[16px] ${option === item[0] ? 'text-white' : 'text-lightBlue hover:text-white'}`}

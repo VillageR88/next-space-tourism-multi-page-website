@@ -39,7 +39,7 @@ export default function Crew({ params }: { params: { equipment: string } }) {
         <ul className="flex size-fit gap-[32px] xl:flex-col">
           {Object.entries(RoutesTechnology).map((item, index) => (
             <li className="group/li flex flex-col justify-between" key={item[0]}>
-              <Link prefetch href={item[1]}>
+              <Link scroll={false} prefetch href={item[1]}>
                 <button
                   title={item[0].replace(/-/g, ' ').toUpperCase()}
                   type="button"

@@ -59,7 +59,7 @@ export default function Crew({ params }: { params: { people: string } }) {
         <ul className="flex h-[63px] gap-[40px] py-[60px] xl:py-0">
           {Object.entries(RoutesCrew).map((item) => (
             <li className="group/li flex flex-col justify-between" key={item[0]}>
-              <Link prefetch href={item[1]}>
+              <Link scroll={false} prefetch href={item[1]}>
                 <button
                   title={peopleItems[item[0] as keyof typeof peopleItems].name}
                   type="button"
