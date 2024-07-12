@@ -42,13 +42,13 @@ export default function Crew({ params }: { params: { people: string } }) {
 
   return (
     <div className="flex size-full flex-col items-center justify-between pt-12 xl:max-h-[734px] xl:flex-row xl:justify-stretch xl:pt-0">
-      <div className="flex size-full max-w-[539px] flex-col items-center justify-between xl:items-start">
-        <div className="flex size-full max-h-[631px] items-center">
-          <div className="flex size-full max-h-[237px] flex-col items-center text-center xl:items-start xl:text-start">
-            <span className="font-bellefair text-[24px] leading-tight text-white/[50.42%] xl:text-[32px]">
+      <div className="flex size-full max-w-[327px] flex-col items-center justify-between md:max-w-[539px] xl:items-start">
+        <div className="flex size-full items-center md:max-h-[631px]">
+          <div className="flex size-full flex-col items-center text-center md:max-h-[237px] xl:items-start xl:text-start">
+            <span className="font-bellefair text-[18px] leading-tight text-white/[50.42%] md:text-[24px] xl:text-[32px]">
               {peopleItems[option].role}
             </span>
-            <h1 className="mt-[16px] font-bellefair text-[40px] leading-tight text-white xl:text-[56px]">
+            <h1 className="mt-[16px] font-bellefair text-[24px] leading-tight text-white md:text-[40px] xl:text-[56px]">
               {peopleItems[option].name}
             </h1>
             <p className="mt-[24px] font-barlow text-[16px] leading-[180%] text-lightBlue md:text-[18px]">
@@ -72,7 +72,7 @@ export default function Crew({ params }: { params: { people: string } }) {
       </div>
       <div className="relative flex size-full max-w-[539px] items-center justify-center px-4 text-white">
         <div
-          className={`relative xl:absolute ${option === Object.keys(peopleItems)[0] ? 'h-[500px] w-[510px] xl:h-[670px]' : option === Object.keys(peopleItems)[1] ? 'h-[500px] w-[470px] xl:h-[676px]' : option === Object.keys(peopleItems)[2] ? 'h-[500px] w-[540px] xl:h-[640px]' : 'h-[500px] w-[580px] xl:h-[620px]'}`}
+          className={`relative xl:absolute ${option === Object.keys(peopleItems)[0] ? 'h-[350px] w-[510px] md:h-[500px] xl:h-[670px]' : option === Object.keys(peopleItems)[1] ? 'h-[350px] w-[470px] md:h-[500px] xl:h-[676px]' : option === Object.keys(peopleItems)[2] ? 'h-[350px] w-[540px] md:h-[500px] xl:h-[640px]' : 'h-[350px] w-[580px] md:h-[500px] xl:h-[620px]'}`}
         >
           <Image
             className="mask-image-linear relative -z-10 object-contain transition"

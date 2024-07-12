@@ -9,7 +9,6 @@ export default function NestedLayout({
   children: ReactNode;
   path: Routes | RoutesCelestial | RoutesCrew;
 }) {
-  console.log(path);
   return (
     <>
       <Navbar path={path} />

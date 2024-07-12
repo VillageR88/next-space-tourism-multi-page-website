@@ -77,7 +77,14 @@ export default function Navbar({ path }: { path: Routes | RoutesCelestial | Rout
   return (
     <div className="relative z-10 mx-auto flex h-[96px] w-full max-w-[1440px] items-center justify-between">
       <div className="flex w-full items-center justify-between pl-[40px] xl:max-w-[736px] xl:pl-[64px]">
-        <Image priority width={48} height={48} className="size-[48px] min-w-[48px]" alt="logo" src={logo as string} />
+        <Image
+          priority
+          width={48}
+          height={48}
+          className="size-[40px] min-w-[40px] md:size-[48px] md:min-w-[48px]"
+          alt="logo"
+          src={logo as string}
+        />
         <div className="z-10 mr-[-30px] hidden h-px w-full max-w-[590px] border-b border-white/25 xl:block" />
       </div>
       <Options path={path} />

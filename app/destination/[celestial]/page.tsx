@@ -53,7 +53,7 @@ export default function Destination({ params }: { params: { celestial: string } 
         <Image
           width={480}
           height={480}
-          className="size-[300px] xl:size-[480px]"
+          className="size-[150px] md:size-[300px] xl:size-[480px]"
           src={celestialItems[option].src}
           alt={option}
         />
@@ -66,7 +66,7 @@ export default function Destination({ params }: { params: { celestial: string } 
                 <Link prefetch href={item[1]}>
                   <button
                     type="button"
-                    className={`font-barlowCondensed text-[16px] tracking-wider transition ${option === item[0] ? 'text-white' : 'text-lightBlue hover:text-white'}`}
+                    className={`font-barlowCondensed text-[14px] tracking-wider transition md:text-[16px] ${option === item[0] ? 'text-white' : 'text-lightBlue hover:text-white'}`}
                   >
                     {item[0].toUpperCase()}
                   </button>
@@ -78,15 +78,17 @@ export default function Destination({ params }: { params: { celestial: string } 
             ))}
           </ul>
           <div className="size-full max-h-[254px] flex-col justify-between text-center xl:text-start">
-            <h1 className="font-bellefair text-[80px] text-white xl:text-[96px]">{option.toUpperCase()}</h1>
+            <h1 className="font-bellefair text-[56px] text-white md:text-[80px] xl:text-[96px]">
+              {option.toUpperCase()}
+            </h1>
             <p className="font-barlow text-[16px] leading-[180%] text-lightBlue xl:text-[18px]">
               {celestialItems[option].description}
             </p>
           </div>
           <div className="h-px border-b border-white/25" />
-          <ul className="flex size-full max-h-[61px] justify-center text-center xl:justify-start xl:text-start">
+          <ul className="flex size-full flex-col justify-center gap-[24px] text-center md:max-h-[61px] md:flex-row md:gap-0 xl:justify-start xl:text-start">
             {Object.entries(celestialItems[option].calculations).map((item) => (
-              <li key={item[0]} className="flex size-full max-w-[210px] flex-col gap-[12px]">
+              <li key={item[0]} className="flex size-full flex-col gap-[12px] md:max-w-[210px]">
                 <span className="font-barlowCondensed text-[14px] leading-tight tracking-[2px] text-lightBlue">
                   {item[0].toUpperCase()}
                 </span>
